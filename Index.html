@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.E.A.C= Valles y Chavira</title>
+    <link rel="stylesheet"href="Estilos.css">
+</head>
+<a href="comoevadirlas.html">
+    <button> Como evadirlas</button>
+</a>
+<a href="emociones.html">
+    <button>Emociones en la escuela</button>
+</a>
+<body>
+    <header>
+    <h1>P.E.A.C</h1>
+    <nav>
+        <ul>
+            <li><a herf="emociones.html"> emociones</a></li>
+            <li><a herf="comoevadirlas.html">como evadirlas</a></li>
+        </ul>
+    </nav>
+    </header>
+<main>
+    <section>
+        <h2> Contenido principal. </h2>
+            <p>
+                El PEAC son las distintas cosas que pasan.<br>
+                en la escuela como las emociones y distintos<br>
+                problemas de hoy en dia<br>
+
+            </p>
+    </section>
+</main>
+
+<aside>
+    <h3>Barra Lateral</h3>
+    <p>
+        Este espacio puede usarse para <br>
+        enlaces, publicidad o informacion <br>
+        adicional. <br>
+    </p>
+</aside>
+<main>
+<a
+  class="boton-youtube"
+  href="https://youtu.be/UDvIEqZy2So?si=TgGhB3XZJb5udicX"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  ▶ Ver video
+</a>
+</main>
+<main>
+<div class="carrusel">
+  <div class="imagenes">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtrn6zSoHJ9E-Mf798A5W3KFBzrH-BSx7JjbKu_W7thA&s=10">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQo96_2pJSDT-RLigqMvqIfDgmhjGLAeovKn8ujSyOcQ&s=10">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShqJRRoYusvtdFB8khd3771C7mKLzwg_rh-oW_xFoYUw&s=10">
+  </div>
+
+  <button class="anterior" aria-label="Imagen anterior">❮</button>
+  <button class="siguiente" aria-label="Imagen siguiente">❯</button>
+
+  <div class="indicadores"></div>
+</div>
+<script>
+    const carrusel = document.querySelector(".carrusel");
+const imagenes = carrusel.querySelector(".imagenes");
+const listaImagenes = imagenes.querySelectorAll("img");
+const anterior = carrusel.querySelector(".anterior");
+const siguiente = carrusel.querySelector(".siguiente");
+const indicadores = carrusel.querySelector(".indicadores");
+
+let indice = 0;
+
+// Crear los indicadores
+listaImagenes.forEach((imagen, i) => {
+  const punto = document.createElement("button");
+  punto.setAttribute("aria-label", "Ir a la imagen " + (i + 1));
+
+  punto.addEventListener("click", () => {
+    indice = i;
+    actualizarCarrusel();
+  });
+
+  indicadores.appendChild(punto);
+});
+
+function actualizarCarrusel() {
+  imagenes.style.transform =
+    `translateX(-${indice * 100}%)`;
+
+  indicadores.querySelectorAll("button").forEach((punto, i) => {
+    punto.classList.toggle("activo", i === indice);
+  });
+}
+
+siguiente.addEventListener("click", () => {
+  indice = (indice + 1) % listaImagenes.length;
+  actualizarCarrusel();
+});
+
+anterior.addEventListener("click", () => {
+  indice = (indice - 1 + listaImagenes.length)
+    % listaImagenes.length;
+  actualizarCarrusel();
+});
+
+// Cambiar imagen automáticamente cada 4 segundos
+let temporizador = setInterval(() => {
+  indice = (indice + 1) % listaImagenes.length;
+  actualizarCarrusel();
+}, 4000);
+
+// Mostrar el primer indicador activo
+actualizarCarrusel();
+</script>
+</main>
+</body>
+</html>

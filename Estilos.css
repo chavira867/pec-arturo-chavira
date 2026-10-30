@@ -1,0 +1,143 @@
+   *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+   }            
+
+   body{
+    font-family: ´Segoe OI´, sans-serif;
+    background-color:rgb(51, 42, 125);
+    color:black;
+    line-height: 1.6;
+   }
+
+   header{
+    background-color:rgb(36, 39, 179);
+    color:black;
+    padding: 20px;
+    text-align: center;
+   }
+
+   nav ul{
+    list-style:circle;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+   }
+
+    nav ul li a{
+   margin:15px;
+    }
+
+   nav ul li a{
+      color:black;
+      text-decoration:none;
+      font-weight: bold;
+   }
+
+   main{
+      width:60%;
+      float:left;
+      padding:20px;
+   }
+
+   aside{
+      width:30%;
+      float:left;
+      background-color:rgb(79, 29, 113);
+      padding:20px;
+   }
+
+   footer{
+      clear:both;
+      background-color:rgb(66, 38, 105);
+      color:black;
+      text-align:15px;
+      margin-top:20px;
+   }
+   .boton-youtube {
+  display: inline-block;
+  background: #ff0000;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.boton-youtube:hover {
+  background: #990000;
+  transform: scale(1.08);
+}
+.carrusel {
+  position: relative;
+  max-width: 800px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px #0005;
+}
+
+.imagenes {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.imagenes img {
+  width: 100%;
+  flex: 0 0 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.carrusel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0009;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.carrusel button:hover {
+  background: #7c3aed;
+}
+
+.anterior {
+  left: 12px;
+}
+
+.siguiente {
+  right: 12px;
+}
+
+.indicadores {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.indicadores button {
+  position: static;
+  transform: none;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  background: #ffffff99;
+}
+
+.indicadores button.activo {
+  background: #a78bfa;
+}
